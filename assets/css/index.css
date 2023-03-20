@@ -5,6 +5,19 @@
     --color-text: #5e5c5c;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-primario);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-secundario);
+    border-radius: 5px;
+}
+
 @font-face {
     font-family: "Unbounded Bold";
     src: url("../fonts/Unbounded-Bold.ttf") format("truetype");
@@ -638,6 +651,15 @@ span {
     line-height: 25px;
 }
 
+.description p {
+    margin-top: 15px;
+}
+
+.description p strong {
+    font-family: "Unbounded Bold";
+    color: var(--color-secundario);
+}
+
 .container_skill {
     display: flex;
     flex: 1;
@@ -661,7 +683,7 @@ span {
 .icono:nth-child(1) {
     top: 20%;
     left: 50%;
-    background-image: url(../images/herramientas-de-diseno.png);
+    background-image: url(../images/iconos/psd.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -676,7 +698,7 @@ span {
 .icono:nth-child(2) {
     top: 38%;
     left: 73%;
-    background-image: url(../images/linkedin.png);
+    background-image: url(../images/iconos/illustator.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -691,7 +713,7 @@ span {
 .icono:nth-child(3) {
     top: 65%;
     left: 65%;
-    background-image: url(../images/whatsapp.png);
+    background-image: url(../images/iconos/figma.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -706,7 +728,7 @@ span {
 .icono:nth-child(4) {
     top: 65%;
     left: 35%;
-    background-image: url(../images/linkedin.png);
+    background-image: url(../images/iconos/id.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -721,7 +743,7 @@ span {
 .icono:nth-child(5) {
     top: 38%;
     left: 27%;
-    background-image: url(../images/whatsapp.png);
+    background-image: url(../images/iconos/xd.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -777,7 +799,8 @@ span {
 
 .modal {
     max-height: 80%;
-    width: 60%;
+    width: 80%;
+    height: 80%;
 }
 
 .container_modal {
@@ -791,6 +814,13 @@ span {
     flex: 1;
     justify-content: center;
     align-items: center;
+    height: 66vh;
+}
+
+.cont_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .cont_content {
@@ -836,6 +866,10 @@ span {
         width: 10px;
         height: 10px;
         right: -15px;
+    }
+
+    nav a {
+        color: var(--color-secundario);
     }
 }
 
@@ -1003,10 +1037,6 @@ span {
         left: 10%;
     }
 
-    .modal {
-        width: 80%;
-    }
-
     .container_modal {
         flex-direction: column;
     }
@@ -1023,5 +1053,9 @@ span {
 
     .swiper.mySwipertwo {
         min-width: 250px;
+    }
+
+    .container_footer {
+        height: 350px;
     }
 }
