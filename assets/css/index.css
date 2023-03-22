@@ -818,6 +818,8 @@ header {
     display: flex;
     gap: 20px;
     padding: 15px;
+    height: 100%;
+    position: relative;
 }
 
 .cont_image {
@@ -825,7 +827,6 @@ header {
     flex: 1;
     justify-content: center;
     align-items: center;
-    height: 66vh;
 }
 
 .cont_image img {
@@ -836,6 +837,8 @@ header {
 
 .cont_content {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     flex: 1;
     justify-content: center;
     align-items: center;
@@ -846,9 +849,21 @@ header {
     color: var(--color-secundario);
 }
 
-.modal .modal-footer {
-    height: 50px;
-    text-align: center;
+.cont_content a {
+    color: var(--color-secundario);
+}
+
+.cont_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 999;
+}
+
+.cont_close a {
+    background-color: var(--color-primario);
+    padding: 2px 5px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -1051,6 +1066,7 @@ header {
 
     .container_modal {
         flex-direction: column;
+        height: auto;
     }
 }
 

@@ -106,12 +106,23 @@ $(document).ready(function() {
 
   $('.modal').modal();
 
-  $('.modal-trigger').click(function(){
-    var imagen = $(this).data('imagen');
-    var descripcion = $(this).data('descripcion');
-    $('#imagenModal').attr('src', imagen);
-    $('#descripcionModal').html(descripcion);
-  });
+  function mostrarModal() {
+    var imagenSrc = $(this).data('imagen');
+    var descripcionHtml = $(this).data('descripcion');
+    var enlaceUrl = $(this).data('enlace');
+  
+    var $enlaceModal = $('#enlaceModal');
+    $('#imagenModal').attr('src', imagenSrc);
+    $('#descripcionModal').html(descripcionHtml);
+    $enlaceModal.attr('href', enlaceUrl).html(enlaceUrl);
+    if (enlaceUrl) {
+      $enlaceModal.show();
+    } else {
+      $enlaceModal.hide();
+    }
+  }
+  
+  $('.modal-trigger').click(mostrarModal);  
 
 });
   
