@@ -213,8 +213,16 @@ span {
     top: 15px;
 }
 
+header {
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
 .section {
-    padding: 4rem 1.5rem;
+    padding: 2rem 1.5rem;
 }
 
 .container {
@@ -243,7 +251,10 @@ span {
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding-left: 2em;
+}
+
+.container_text_header h1, .container_text_header h3 {
+    margin-left: 35px;
 }
 
 .container_text_header p {
@@ -286,7 +297,6 @@ span {
     border-color: var(--color-primario);
     background-color: #ffffff;
     color: var(--color-primario);
-    ;
 }
 
 .circle_before::before {
@@ -913,8 +923,8 @@ span {
         margin-left: auto;
     }
 
-    .section {
-        padding: 3rem 3rem;
+    .section, header {
+        padding: 4rem 3rem;
     }
 
     .navbar>.container .navbar-brand,
@@ -952,6 +962,7 @@ span {
     .container_header {
         flex-direction: column-reverse;
         gap: 20px;
+        height: 80vh;
     }
 
     .container_blobz {
