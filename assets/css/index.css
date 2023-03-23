@@ -507,6 +507,7 @@ header {
 .container_text-digitales p {
     width: 40%;
     margin-top: 15px;
+    text-align: end;
 }
 
 .container_text-web {
