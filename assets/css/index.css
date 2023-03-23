@@ -294,10 +294,33 @@ header {
     -o-border-radius: 25px;
 }
 
-.button:hover {
+.button:hover, button:focus {
     border-color: var(--color-primario);
     background-color: #ffffff;
     color: var(--color-primario);
+}
+
+.button_idioma {
+    background-color: #ffffff;
+    border: 2px solid;
+    border-color: var(--color-primario);
+    color: var(--color-primario);
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    padding: 10px 30px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    white-space: normal;
+    transition: .2s;
+    -webkit-transition: .2s;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
 }
 
 .circle_before::before {

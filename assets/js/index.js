@@ -6,6 +6,32 @@ $(document).ready(function() {
   
   });
 
+  var idioma = navigator.language.substring(0,2);
+
+  mostrarContenido(idioma);
+
+  $("#idioma").click(function() {
+    if (idioma === "es") {
+      idioma = "en";
+      $("#idioma").html("Español");
+      mostrarContenido(idioma);
+    } else {
+      idioma = "es";
+      $("#idioma").html("English");
+      mostrarContenido(idioma);
+    }
+  });
+
+  function mostrarContenido(idioma) {
+    if (idioma === "es") {
+      $(".contenido-es").show();
+      $(".contenido-en").hide();
+    } else {
+      $(".contenido-es").hide();
+      $(".contenido-en").show();
+    }
+  }
+
   var itemsPerPage = 3;
   var windowWidth = $(window).width();
 
@@ -13,7 +39,10 @@ $(document).ready(function() {
     itemsPerPage = 1;
   }
 
-  var totalPages = Math.ceil($('#image-gallery a').length / itemsPerPage);
+  var aTags = $('#image-gallery a').filter(function() {
+    return $(this).css('display') !== 'none';
+  });
+  var totalPages = Math.ceil(aTags.length / itemsPerPage);
   
   for (var i = 1; i <= totalPages; i++) {
     $('#pagination').append('<a class="page">' + i + '</a>');
@@ -24,13 +53,16 @@ $(document).ready(function() {
   function showPage(page) {
     var start = (page - 1) * itemsPerPage;
     var end = start + itemsPerPage;
-  
-    $('#image-gallery a').hide();
-    $('#image-gallery a').slice(start, end).show();
-  
+    
+    var contentSelector = idioma === 'en' ? '#image-gallery .contenido-en' : '#image-gallery .contenido-es';
+    
+    $(contentSelector).hide();
+    $(contentSelector).slice(start, end).show();
+    
     $('#pagination a').removeClass('active_btn');
     $('#pagination a:nth-child(' + page + ')').addClass('active_btn');
   }
+  
   
   $('#pagination').on('click', '.page', function() {
     var page = $(this).text();
@@ -46,7 +78,10 @@ $(document).ready(function() {
       itemsPerPage = 3;
     }
   
-    totalPages = Math.ceil($('#image-gallery a').length / itemsPerPage);
+    var aTags = $('#image-gallery a').filter(function() {
+      return $(this).css('display') !== 'none';
+    });
+    var totalPages = Math.ceil(aTags.length / itemsPerPage);
     $('#pagination').empty();
 
     for (var i = 1; i <= totalPages; i++) {
@@ -109,7 +144,7 @@ $(document).ready(function() {
   function mostrarModal() {
     var imagenSrc = $(this).data('imagen');
     var descripcionHtml = $(this).data('descripcion');
-    var enlaceUrl = $(this).data('enlace');
+    var enlaceUrl = $(this).data('link');
   
     var $enlaceModal = $('#enlaceModal');
     $('#imagenModal').attr('src', imagenSrc);
