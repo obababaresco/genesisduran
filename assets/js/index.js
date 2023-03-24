@@ -1,11 +1,13 @@
 $(document).ready(function() {
 
+  //eveto para activar el menu en mobile
   $(".navbar-burger").click(function() {
     $(".navbar-burger").toggleClass("is-active");
     $(".navbar-menu").toggleClass("is-active");
   
   });
 
+  //funcion para detectar y cambiar el idioma de la pagina
   var idioma = navigator.language.substring(0,2);
 
   mostrarContenido(idioma);
@@ -32,6 +34,7 @@ $(document).ready(function() {
     }
   }
 
+  //funcion para mostrar los diseños digitales con un paginado
   var itemsPerPage = 3;
   var windowWidth = $(window).width();
 
@@ -91,6 +94,7 @@ $(document).ready(function() {
     showPage(1);
   });
 
+  //funcion que inicia el carrusel de los diseños web
   var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -114,19 +118,7 @@ $(document).ready(function() {
     },
   });
 
-  var swipertwo = new Swiper(".mySwipertwo", {
-    loop: true,
-    grabCursor: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    }
-  });
-
+  //evento para hacer scroll hasta un elemento en el DOM
   $('a.enlace').click(function() {
     var destino = $(this.hash);
     if (destino.length == 0) {
@@ -139,8 +131,8 @@ $(document).ready(function() {
     return false;
   });
 
+  //funcion que inicializa y muestra el modal para el detalle del diseño
   $('.modal').modal();
-
   function mostrarModal() {
     var imagenSrc = $(this).data('imagen');
     var descripcionHtml = $(this).data('descripcion');
@@ -156,7 +148,6 @@ $(document).ready(function() {
       $enlaceModal.hide();
     }
   }
-  
   $('.modal-trigger').click(mostrarModal);  
 
 });

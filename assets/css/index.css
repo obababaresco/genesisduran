@@ -489,10 +489,6 @@ header {
     background-image: url(../images/diseños-web.webp);
 }
 
-.optThree {
-    background-image: url(../images/diseños-impresos.webp);
-}
-
 .container_text-digitales {
     display: flex;
     flex-direction: column;
@@ -907,8 +903,7 @@ header {
     }
 
     .optOne,
-    .optTwo,
-    .optThree {
+    .optTwo {
         max-width: 100%;
     }
 
@@ -987,10 +982,6 @@ header {
 
     .optTwo {
         max-width: 90%;
-    }
-
-    .optThree {
-        max-width: 85%;
     }
 
     .container_text-impresos {
